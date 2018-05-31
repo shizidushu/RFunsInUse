@@ -44,7 +44,7 @@ connect_postgres <- function(user = "postgres",
 
 #' kill all open connections at once
 #' 
-#' @description refer to \link{https://stackoverflow.com/questions/32139596/cannot-allocate-a-new-connection-16-connections-already-opened-rmysql}
+#' refer to \url{https://stackoverflow.com/questions/32139596/cannot-allocate-a-new-connection-16-connections-already-opened-rmysql}
 #'
 #' @param drv A object inheriting from DBIDriver. Defaults to RPostgreSQL::PostgreSQL()
 #' @export
@@ -57,27 +57,18 @@ kill_db_connections <- function (drv = RPostgreSQL::PostgreSQL()) {
 }
 
 
-#' Connect SQL Server
-#'
-#' @param server server address; defaults to 127.0.0.1
-#' @param port port number
-#' @param database the database name. Defaults to Master
-#' @param useNTLMv2 a authentication method. Defaults to false
-#' @param user user name
-#' @param password the password
+#' Generate a function to connect to a database
+#' 
+#' @inheritParams config::get
+#' @inheritParams DBI::dbConnect
 #' @export
-connect_sql_server <- function(server = "127.0.0.1",
-                               port=1433,
-                               database = "Master",
-                               useNTLMv2="false",
-                               user,
-                               password) {
-  DBI::dbConnect(drv = RSQLServer::SQLServer(),
-            server=server,
-            port=port,
-            database = database,
-            properties=list(useNTLMv2=useNTLMv2,
-                            user=user,
-                            password=password)
-  )
+connect_db <- function(drv = odbc::odbc(), value = "datawarehouse"){
+  function () {
+    args <- config::get(value)
+    do.call(DBI::dbConnect, c(list(drv = drv), args))
+  }
 }
+
+
+
+

@@ -25,7 +25,8 @@ Imports:
     pool,
     RPostgreSQL,
     magrittr,
-    RSQLServer
+    config,
+    ggtech
 Suggests:
     tidyverse,
     RColorBrewer

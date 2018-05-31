@@ -11,7 +11,7 @@ geom_point_smooth(prefix = "$", suffix = "", angle = 45)
 
 \item{suffix}{Symbols to display before and after amount.}
 
-\item{angle}{Angle (in [0, 360])}
+\item{angle}{Angle (in \eqn{[0, 360]})}
 }
 \description{
 point smooth geom with prefered theme

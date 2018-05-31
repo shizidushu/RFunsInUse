@@ -28,7 +28,7 @@ the table, and \code{i} or \code{oldName} is the index of the current
 column name}
 
 \item{extensions}{a character vector of the names of the DataTables
-extensions (\url{http://datatables.net/extensions/index})}
+extensions (\url{https://datatables.net/extensions/index})}
 
 \item{pageLength}{the length of page}
 

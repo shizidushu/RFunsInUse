@@ -11,11 +11,11 @@ common_summary_table(df, var, digits = 2, caption = NULL)
 
 \item{var}{variable that you compute measures for}
 
-\item{digits}{the maximum number of digits for numeric columns (passed to
-\code{round()}); it can also be a vector of length \code{ncol(x)} to set
-the number of digits for individual columns}
+\item{digits}{Maximum number of digits for numeric columns, passed to
+\code{round()}. This can also be a vector of length \code{ncol(x)}, to set
+the number of digits for individual columns.}
 
-\item{caption}{the table caption}
+\item{caption}{The table caption.}
 }
 \description{
 summary table of mesures of location

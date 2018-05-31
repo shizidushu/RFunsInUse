@@ -7,6 +7,6 @@
 lhs \%>\% rhs
 }
 \description{
-copy from to \link{https://github.com/tidyverse/stringr/blob/master/R/utils.R}
+copy from \link{https://github.com/tidyverse/stringr/blob/master/R/utils.R}
 }
 \keyword{internal}

@@ -10,5 +10,5 @@ kill_db_connections(drv = RPostgreSQL::PostgreSQL())
 \item{drv}{A object inheriting from DBIDriver. Defaults to RPostgreSQL::PostgreSQL()}
 }
 \description{
-refer to \link{https://stackoverflow.com/questions/32139596/cannot-allocate-a-new-connection-16-connections-already-opened-rmysql}
+refer to \url{https://stackoverflow.com/questions/32139596/cannot-allocate-a-new-connection-16-connections-already-opened-rmysql}
 }

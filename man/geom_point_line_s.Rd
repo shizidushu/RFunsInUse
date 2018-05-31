@@ -14,8 +14,9 @@ geom_point_line_s(prefix = "$", suffix = "", palette = "Paired", ...)
 \item{palette}{If a string, will use that named palette.  If a number, will
 index into the list of palettes of appropriate \code{type}}
 
-\item{...}{Other arguments passed on to \code{\link{discrete_scale}}
-to control name, limits, breaks, labels and so forth.}
+\item{...}{Other arguments passed on to \code{\link[=discrete_scale]{discrete_scale()}} or, for
+\code{distiller} scales, \code{\link[=continuous_scale]{continuous_scale()}} to control name,
+limits, breaks, labels and so forth.}
 }
 \description{
 point line geom with prefered theme

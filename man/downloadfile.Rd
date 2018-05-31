@@ -13,7 +13,7 @@ downloadfile(input, output, session, x, filename)
 
 \item{session}{refer to \url{https://shiny.rstudio.com/articles/modules.html}}
 
-\item{x}{data frame to write to disk}
+\item{x}{data frame or named list of data frames that will be sheets in the xlsx}
 
 \item{filename}{A string of the filename, including extension, that the
 user's web browser should default to when downloading the file; or a
