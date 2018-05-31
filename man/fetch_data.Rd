@@ -14,5 +14,13 @@ fetch_data(exists_f, get_f, set_f)
 \item{set_f}{function used to set new data into cache if data not exists.}
 }
 \description{
-Generate a function to fetch data from cache or get new data with a query if there is no cache
+Use \code{\link[pryr]{unenclose}} to check the generated function
 }
+\section{Closure Arguments}{
+
+\itemize{
+\item key. Redis key. A string.
+\item query_f. function used to get new data. Usually a sql query.
+}
+}
+

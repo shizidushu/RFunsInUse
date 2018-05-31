@@ -4,12 +4,12 @@
 \alias{redis_set}
 \title{Generate a function to redis set command with specified connection}
 \usage{
-redis_set(redis_con, seconds, serialize = TRUE)
+redis_set(redis_con, time_to_live, serialize = TRUE)
 }
 \arguments{
 \item{redis_con}{an interface to Redis. See \code{\link[redux]{hiredis}}}
 
-\item{seconds}{timeout in seconds. \code{\link[lubridate]{dhours}} can be used.}
+\item{time_to_live}{time to live in seconds. \code{\link[lubridate]{dhours}} can be used.}
 
 \item{serialize}{Whether to serialise R object or not. Defaults to TRUE}
 }
@@ -19,3 +19,11 @@ Wrap SET and EXPIRE. see \url{https://redis.io/commands/set} and \url{https://re
 \details{
 Use \code{\link[pryr]{unenclose}} to check the generated function
 }
+\section{Closure Arguments}{
+
+\itemize{
+\item key. Redis key. A string.
+\item value. A string or a R object if serialize is set to TRUE
+}
+}
+

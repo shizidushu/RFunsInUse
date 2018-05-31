@@ -6,9 +6,19 @@
 \usage{
 redis_exists(redis_con)
 }
+\arguments{
+\item{redis_con}{an interface to Redis. See \code{\link[redux]{hiredis}}}
+}
 \description{
 Warp EXISTS. see \url{https://redis.io/commands/exists}
 }
 \details{
 Use \code{\link[pryr]{unenclose}} to check the generated function
 }
+\section{Closure Arguments}{
+
+\itemize{
+\item key. Redis key. A string.
+}
+}
+
