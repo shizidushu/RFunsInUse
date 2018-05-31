@@ -6,5 +6,6 @@ The functions I created when I am using R.
 
 ```R
 library(devtools)
-devtools::install_github('shizidushu/RFunsInUse')
+
+devtools::install_github('shizidushu/RFunsInUse', dependencies=TRUE)
 ```
