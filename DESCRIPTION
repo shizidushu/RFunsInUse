@@ -26,7 +26,8 @@ Imports:
     RPostgreSQL,
     magrittr,
     config,
-    ggtech
+    ggtech,
+    redux
 Suggests:
     tidyverse,
     RColorBrewer
