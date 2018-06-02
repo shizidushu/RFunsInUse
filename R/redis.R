@@ -113,3 +113,10 @@ redis_cache_time <- function(redis_con, time_to_live) {
     }
   }
 }
+
+redis_del <- function(redis_con) {
+  function(key) {
+    r <- redis_con
+    r$DEL(key)
+  }
+}
