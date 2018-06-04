@@ -114,6 +114,14 @@ redis_cache_time <- function(redis_con, time_to_live) {
   }
 }
 
+#' Generate a function to delete a key with specified connection
+#'  
+#' @description Warp DEL see \url{https://redis.io/commands/del}
+#' 
+#' @details  Use \code{\link[pryr]{unenclose}} to check the generated function
+#' 
+#' @inheritParams redis_set
+#' @export
 redis_del <- function(redis_con) {
   function(key) {
     r <- redis_con
