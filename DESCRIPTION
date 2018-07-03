@@ -1,4 +1,4 @@
-Package: RFunsInUse
+Package: hfun
 Title: R Functions in use
 Version: 0.0.0.9000
 Authors@R: person("Simon", "Han", email = "shizidushu@qq.com", role = c("aut", "cre"))
