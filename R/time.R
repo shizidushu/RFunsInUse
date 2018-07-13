@@ -34,6 +34,7 @@ days_df <- function(sep = "~", with_year = TRUE) {
     dplyr::ungroup() %>%
     dplyr::mutate(
       month = lubridate::month(day),
+      month_wy = lubridate::year(day) * 100 + lubridate::month(day),
       quarter = lubridate::quarter(day),
       quarter_wy = lubridate::quarter(day, with_year = TRUE),
       semester = lubridate::semester(day),
