@@ -4,9 +4,9 @@
 \alias{send_mail}
 \title{Send emails}
 \usage{
-send_mail(from = "simon@inc.tvc-tech.com", to, subject = "", body = "",
-  host.name = "smtp.exmail.qq.com", port = 465, user.name, passwd,
-  ssl = TRUE, authenticate = TRUE)
+send_mail(from, to, subject = "", body = "", encoding = "utf-8",
+  host.name, port = 465, user.name, passwd, ssl = TRUE,
+  authenticate = TRUE, attach.files = NULL)
 }
 \arguments{
 \item{from}{A valid email address of the sender.}
@@ -16,6 +16,8 @@ send_mail(from = "simon@inc.tvc-tech.com", to, subject = "", body = "",
 \item{subject}{Subject of the email.}
 
 \item{body}{Body of the email as text. If the parameter body refers to an existing file location, the text of the file is parsed as body of the email.}
+
+\item{encoding}{Character encoding to use for the email. Supported encodings include iso-8859-1 (default), utf-8, us-ascii, and koi8-r.}
 
 \item{host.name}{the smtp server}
 
@@ -28,6 +30,8 @@ send_mail(from = "simon@inc.tvc-tech.com", to, subject = "", body = "",
 \item{ssl}{Whether use ssl or not; defaults to true}
 
 \item{authenticate}{A boolean variable to indicate whether authorization is required to connect to the SMTP server. If set to true, see details on parameters required in smtp parameter.}
+
+\item{attach.files}{A character vector of paths in the file system linking to files or *valid* URLs to be attached to the email (see details for more info on attaching URLs)}
 }
 \description{
 Send emails

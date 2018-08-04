@@ -6,21 +6,25 @@
 #' @param passwd password of the email
 #' @param ssl Whether use ssl or not; defaults to true
 #' @param port smtp port; defaults to 465
-send_mail <- function(from = "simon@inc.tvc-tech.com",
+#' @export
+send_mail <- function(from,
                       to,
                       subject = "",
                       body = "",
-                      host.name = "smtp.exmail.qq.com",
+                      encoding = "utf-8",
+                      host.name,
                       port = 465,
                       user.name,
                       passwd,
                       ssl = TRUE,
-                      authenticate = TRUE) {
+                      authenticate = TRUE,
+                      attach.files = NULL) {
   mailR::send.mail(
     from = from,
     to = to,
     subject = subject,
     body = body,
+    encoding = encoding,
     smtp = list(
       host.name = host.name,
       port = port,
@@ -29,6 +33,7 @@ send_mail <- function(from = "simon@inc.tvc-tech.com",
       ssl = ssl
     ),
     authenticate = authenticate,
-    send = TRUE
+    send = TRUE,
+    attach.files = attach.files
   )
 }
