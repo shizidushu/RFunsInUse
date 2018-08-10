@@ -4,10 +4,10 @@
 \alias{create_workbook_sku_image}
 \title{Create a workbook for dataframe with sku image}
 \usage{
-create_workbook_sku_image(df, df_image_title_col_name, df_image_url_col_name,
-  image_col_name = "Image", widths = 27, heights = 144,
-  image_file_extension = ".JPG", width = 5, height = 5, units = "cm",
-  dpi = 300, image_path = "~/images")
+create_workbook_sku_image(df, df_image_title_col_name,
+  df_image_url_col_name, image_col_name = "Image", widths = 27,
+  heights = 144, image_file_extension = ".JPG", width = 5,
+  height = 5, units = "cm", dpi = 300, image_path = "~/images")
 }
 \arguments{
 \item{df}{a tbl or dataframe}
