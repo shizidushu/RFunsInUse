@@ -102,13 +102,15 @@ create_workbook_sku_image <- function(df,
 #' @inheritParams create_workbook_sku_image
 #' @param filename a file name to write to
 #' @param image_path the path to store images locally, defaults to "/tmp/images"
+#' @param ... arguments passed to \code{\link{create_workbook_sku_image}} 
 #' @export
 write_excel_image <- function(df,
                               filename = tempfile(fileext = ".xlsx"),
                               df_image_title_col_name,
                               df_image_url_col_name,
                               image_col_name,
-                              image_path = "/tmp/images"
+                              image_path = "/tmp/images",
+                              ...
 ) {
   # create the dir if it doesn't exists
   dir.create(image_path, showWarnings = FALSE)
@@ -122,7 +124,8 @@ write_excel_image <- function(df,
                                         df_image_title_col_name = df_image_title_col_name,
                                         df_image_url_col_name = df_image_url_col_name,
                                         image_col_name = image_col_name,
-                                        image_path = image_path)
+                                        image_path = image_path,
+                                        ...)
   
   openxlsx::saveWorkbook(wb, filename, overwrite = TRUE)
   

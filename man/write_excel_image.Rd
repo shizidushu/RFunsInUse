@@ -6,7 +6,7 @@
 \usage{
 write_excel_image(df, filename = tempfile(fileext = ".xlsx"),
   df_image_title_col_name, df_image_url_col_name, image_col_name,
-  image_path = "/tmp/images")
+  image_path = "/tmp/images", ...)
 }
 \arguments{
 \item{df}{a tbl or dataframe}
@@ -20,6 +20,8 @@ write_excel_image(df, filename = tempfile(fileext = ".xlsx"),
 \item{image_col_name}{the colname for the image in df}
 
 \item{image_path}{the path to store images locally, defaults to "/tmp/images"}
+
+\item{...}{arguments passed to \code{\link{create_workbook_sku_image}}}
 }
 \description{
 Write dataframe with image url to excel file with image column
