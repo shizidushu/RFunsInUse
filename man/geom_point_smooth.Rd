@@ -7,9 +7,9 @@
 geom_point_smooth(prefix = "$", suffix = "", angle = 45)
 }
 \arguments{
-\item{prefix}{Symbols to display before and after amount.}
+\item{prefix}{Symbols to display before and after value.}
 
-\item{suffix}{Symbols to display before and after amount.}
+\item{suffix}{Symbols to display before and after value.}
 
 \item{angle}{Angle (in \eqn{[0, 360]})}
 }

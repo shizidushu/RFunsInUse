@@ -7,9 +7,9 @@
 geom_ecdf_s(prefix = "$", suffix = "", label = "")
 }
 \arguments{
-\item{prefix}{Symbols to display before and after amount.}
+\item{prefix}{Symbols to display before and after value.}
 
-\item{suffix}{Symbols to display before and after amount.}
+\item{suffix}{Symbols to display before and after value.}
 
 \item{label}{The text for the axis, plot title or caption below the plot.}
 }

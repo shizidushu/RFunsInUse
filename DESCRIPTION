@@ -11,6 +11,7 @@ Imports:
     scales,
     lubridate,
     rlang,
+    purrr,
     shiny,
     writexl,
     mailR,

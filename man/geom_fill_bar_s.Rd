@@ -8,9 +8,9 @@ geom_fill_bar_s(prefix = "$", suffix = "", palette = "Paired",
   position = "dodge")
 }
 \arguments{
-\item{prefix}{Symbols to display before and after amount.}
+\item{prefix}{Symbols to display before and after value.}
 
-\item{suffix}{Symbols to display before and after amount.}
+\item{suffix}{Symbols to display before and after value.}
 
 \item{palette}{If a string, will use that named palette.  If a number, will
 index into the list of palettes of appropriate \code{type}}

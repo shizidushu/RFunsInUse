@@ -8,9 +8,9 @@ geom_flip_bar_s(prefix = "$", suffix = "", low = "#00AFBB",
   high = "#FC4E07")
 }
 \arguments{
-\item{prefix}{Symbols to display before and after amount.}
+\item{prefix}{Symbols to display before and after value.}
 
-\item{suffix}{Symbols to display before and after amount.}
+\item{suffix}{Symbols to display before and after value.}
 
 \item{low}{Colours for low and high ends of the gradient.}
 
