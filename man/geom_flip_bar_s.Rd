@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggplot2.R
 \name{geom_flip_bar_s}
 \alias{geom_flip_bar_s}
-\title{fliped bar geom with perfered theme}
+\title{fliped bar geom}
 \usage{
 geom_flip_bar_s(prefix = "$", suffix = "", low = "#00AFBB",
   high = "#FC4E07")
@@ -17,5 +17,5 @@ geom_flip_bar_s(prefix = "$", suffix = "", low = "#00AFBB",
 \item{high}{Colours for low and high ends of the gradient.}
 }
 \description{
-fliped bar geom with perfered theme
+fliped bar geom
 }

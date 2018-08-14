@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggplot2.R
 \name{geom_fill_bar_s}
 \alias{geom_fill_bar_s}
-\title{filled bar geom with prefered theme}
+\title{filled bar geom}
 \usage{
 geom_fill_bar_s(prefix = "$", suffix = "", palette = "Paired",
   position = "dodge")
@@ -19,5 +19,5 @@ index into the list of palettes of appropriate \code{type}}
 a call to a position adjustment function.}
 }
 \description{
-filled bar geom with prefered theme
+filled bar geom
 }

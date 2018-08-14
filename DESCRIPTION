@@ -3,7 +3,7 @@ Title: R Functions in use
 Version: 0.0.0.9000
 Authors@R: person("Simon", "Han", email = "shizidushu@qq.com", role = c("aut", "cre"))
 Description: My personal functions in use
-Depends: R (>= 3.4.3)
+Depends: R (>= 3.5.1)
 Imports:
     DBI,
     stringr,
@@ -27,7 +27,6 @@ Imports:
     RPostgreSQL,
     magrittr,
     config,
-    ggtech,
     redux
 Suggests:
     tidyverse,

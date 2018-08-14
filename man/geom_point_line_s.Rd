@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggplot2.R
 \name{geom_point_line_s}
 \alias{geom_point_line_s}
-\title{point line geom with prefered theme}
+\title{point line geom}
 \usage{
 geom_point_line_s(prefix = "$", suffix = "", palette = "Paired", ...)
 }
@@ -19,5 +19,5 @@ index into the list of palettes of appropriate \code{type}}
 limits, breaks, labels and so forth.}
 }
 \description{
-point line geom with prefered theme
+point line geom
 }
