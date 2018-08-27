@@ -61,11 +61,12 @@ kill_db_connections <- function (drv = RPostgreSQL::PostgreSQL()) {
 #' 
 #' @inheritParams config::get
 #' @inheritParams DBI::dbConnect
+#' @param ... add additional parameters to DBI::dbConnect, such as .connection_string = "Language=English;AutoTranslate=Yes;" when connecting to sql server
 #' @export
-connect_db <- function(drv = odbc::odbc(), value = "datawarehouse"){
+connect_db <- function(drv = odbc::odbc(), value = "datawarehouse", ...){
   function () {
     args <- config::get(value)
-    do.call(DBI::dbConnect, c(list(drv = drv), args))
+    do.call(DBI::dbConnect, c(list(drv = drv), args, ...))
   }
 }
 
