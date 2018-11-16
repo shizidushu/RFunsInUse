@@ -11,7 +11,8 @@ geom_ecdf_s(prefix = "$", suffix = "", label = "")
 
 \item{suffix}{Symbols to display before and after value.}
 
-\item{label}{The text for the axis, plot title or caption below the plot.}
+\item{label}{The title of the respective axis (for \code{xlab()} or \code{ylab()}) or
+of the plot (for \code{ggtitle()}).}
 }
 \description{
 ecdf geom with prefered theme

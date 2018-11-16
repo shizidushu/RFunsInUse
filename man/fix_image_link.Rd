@@ -4,7 +4,7 @@
 \alias{fix_image_link}
 \title{Add image url prefix to image column}
 \usage{
-fix_image_link(df, df_image_url_col_name, image_url_prefix)
+fix_image_link(df, df_image_url_col_name, image_url_prefix = NULL)
 }
 \arguments{
 \item{df}{a tbl or dataframe}

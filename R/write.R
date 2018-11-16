@@ -6,12 +6,14 @@
 #' @return df
 #' @export
 fix_image_link <- function(df,
-                           df_image_url_col_name,
-                           image_url_prefix) {
-  df[[df_image_url_col_name]] <- paste0(image_url_prefix,
-                                        df[[df_image_url_col_name]]
-                                        )
-  df
+                               df_image_url_col_name,
+                               image_url_prefix = NULL) {
+  col_name <- ensym(df_image_url_col_name)
+  df %>%
+    dplyr::mutate(!!col_name := dplyr::case_when(
+      any(is.na(!!col_name), nchar(!!col_name) == 0) ~ paste0(image_url_prefix,!!col_name),
+      TRUE ~ NA_character_
+    ))
 }
 
 
@@ -30,11 +32,24 @@ download_image_url <- function(df,
                                image_file_extension = ".JPG",
                                image_path = "~/images") {
   for (i in 1:nrow(df)) {
-    if (!stringr::str_detect(df[[df_image_title_col_name]][i], pattern = lsp_label) &
-        !file.exists(paste0(file.path(image_path, df[[df_image_title_col_name]][i]), image_file_extension))) {
-      curl::curl_download(df[[df_image_url_col_name]][i],
-                    paste0(file.path(image_path, df[[df_image_title_col_name]][i]), image_file_extension))
-    }
+    # the sku which images will be downloaded and its path to be saved
+    sku <-df[[df_image_title_col_name]][i]
+    location_to_save <- paste0(file.path(image_path, sku), image_file_extension)
+    image_url <- df[[df_image_url_col_name]][i]
+    # check if image_url is NA or length of image_url is 0 
+    # or the sku is NA, length of zero, temporary SKU without images, its image has been downloaded; otherwise download
+    pred <- any(is.na(image_url),
+                nchar(image_url) ==0,
+                is.na(sku),
+                nchar(sku)== 0,
+                stringr::str_detect(sku, pattern = lsp_label),
+                file.exists(location_to_save)
+    )
+    # testing
+    print(paste(!pred, sku, image_url))
+    # download the image
+    if (!pred) {curl::curl_download(url = image_url, location_to_save)}
+    
   }
   df
 }
