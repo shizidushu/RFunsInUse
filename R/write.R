@@ -8,10 +8,10 @@
 fix_image_link <- function(df,
                                df_image_url_col_name,
                                image_url_prefix = NULL) {
-  col_name <- ensym(df_image_url_col_name)
+  col_name <- rlang::ensym(df_image_url_col_name)
   df %>%
     dplyr::mutate(!!col_name := dplyr::case_when(
-      any(is.na(!!col_name), nchar(!!col_name) == 0) ~ paste0(image_url_prefix,!!col_name),
+      !any(is.na(!!col_name), nchar(!!col_name) == 0) ~ paste0(image_url_prefix,!!col_name),
       TRUE ~ NA_character_
     ))
 }
