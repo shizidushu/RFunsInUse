@@ -11,8 +11,8 @@ fix_image_link <- function(df,
   col_name <- rlang::ensym(df_image_url_col_name)
   df %>%
     dplyr::mutate(!!col_name := dplyr::case_when(
-      !any(is.na(!!col_name), stringi::stri_length(!!col_name) == 0) ~ paste0(image_url_prefix,!!col_name),
-      TRUE ~ NA_character_
+      is.na(!!col_name) | stringi::stri_length(!!col_name) == 0  ~ NA_character_,
+      TRUE ~ paste0(image_url_prefix,!!col_name)
     ))
 }
 
