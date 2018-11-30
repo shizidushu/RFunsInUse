@@ -27,7 +27,8 @@ Imports:
     RPostgreSQL,
     magrittr,
     config,
-    redux
+    redux,
+    stringi
 Suggests:
     tidyverse,
     RColorBrewer

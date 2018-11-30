@@ -11,7 +11,7 @@ fix_image_link <- function(df,
   col_name <- rlang::ensym(df_image_url_col_name)
   df %>%
     dplyr::mutate(!!col_name := dplyr::case_when(
-      !any(is.na(!!col_name), nchar(!!col_name) == 0) ~ paste0(image_url_prefix,!!col_name),
+      !any(is.na(!!col_name), stringi::stri_length(!!col_name) == 0) ~ paste0(image_url_prefix,!!col_name),
       TRUE ~ NA_character_
     ))
 }
@@ -39,9 +39,9 @@ download_image_url <- function(df,
     # check if image_url is NA or length of image_url is 0 
     # or the sku is NA, length of zero, temporary SKU without images, its image has been downloaded; otherwise download
     pred <- any(is.na(image_url),
-                nchar(image_url) ==0,
+                stringi::stri_length(image_url) ==0,
                 is.na(sku),
-                nchar(sku)== 0,
+                stringi::stri_length(sku)== 0,
                 stringr::str_detect(sku, pattern = lsp_label),
                 file.exists(location_to_save)
     )
