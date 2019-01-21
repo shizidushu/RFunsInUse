@@ -48,7 +48,7 @@ download_image_url <- function(df,
     # testing
     print(paste(!pred, sku, image_url))
     # download the image
-    if (!pred) {curl::curl_download(url = image_url, location_to_save)}
+    if (!pred) {tryCatch({curl::curl_download(url = image_url, location_to_save)}, error=function(e){})}
     
   }
   df
